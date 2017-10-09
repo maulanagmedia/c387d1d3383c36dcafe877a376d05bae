@@ -40,7 +40,9 @@
         <activity
             android:name=".FormMapsActivity"
             android:label="@string/title_activity_form_maps" />
-        <activity android:name=".ListPelanggan"></activity>
+        <activity android:name=".ListPelanggan" />
+        <activity android:name=".LoginScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"></activity>
     </application>
 
 </manifest>

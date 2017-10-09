@@ -11,6 +11,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AbsListView;
@@ -26,6 +29,7 @@ import com.maulana.custommodul.ApiVolley;
 import com.maulana.custommodul.CustomItem;
 import com.maulana.custommodul.ItemValidation;
 import com.maulana.custommodul.RuntimePermissionsActivity;
+import com.maulana.custommodul.SessionManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -58,6 +62,9 @@ public class MainActivity extends RuntimePermissionsActivity {
     private ItemValidation iv = new ItemValidation();
     private boolean firstLoad = true;
     private ListPelangganAdapter adapter;
+    private SessionManager session;
+    private String kodeArea;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +108,8 @@ public class MainActivity extends RuntimePermissionsActivity {
         LayoutInflater li = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         footerList = li.inflate(R.layout.footer_list, null);
 
+        session = new SessionManager(MainActivity.this);
+        kodeArea = session.getUserInfo(SessionManager.TAG_KODE_AREA);
         isLoading = false;
         getDataPelanggan();
 
@@ -125,6 +134,33 @@ public class MainActivity extends RuntimePermissionsActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_logout:
+
+                loguoutUser();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void loguoutUser(){
+
+        Intent intent = new Intent(MainActivity.this, LoginScreen.class);
+        session.logoutUser(intent);
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         edtSearch.setText("");
@@ -138,6 +174,7 @@ public class MainActivity extends RuntimePermissionsActivity {
         JSONObject jBody = new JSONObject();
 
         try {
+            jBody.put("kodearea", kodeArea);
             jBody.put("keyword", keyword);
             jBody.put("startindex", String.valueOf(startIndex));
             jBody.put("count", String.valueOf(count));
@@ -193,6 +230,7 @@ public class MainActivity extends RuntimePermissionsActivity {
         JSONObject jBody = new JSONObject();
 
         try {
+            jBody.put("kodeArea", kodeArea);
             jBody.put("keyword", keyword);
             jBody.put("startindex", String.valueOf(startIndex));
             jBody.put("count", String.valueOf(count));
