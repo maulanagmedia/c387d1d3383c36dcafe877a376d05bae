@@ -1,0 +1,186 @@
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="gmedia.net.id.psplocationfinder.FormMapsActivity"
+    android:background="@color/color_red">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:title="Customer Position"
+        android:subtitle="Customer Position"
+        map:title="Customer Position"
+        map:titleTextColor="@color/color_white"></android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ripple_selected_red"
+        android:padding="@dimen/padding_default"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical|right"
+                android:id="@+id/tv_ket"
+                android:text="Tahan point untuk memindah/ tekan pada bagian map"/>
+
+            <fragment
+                android:id="@+id/map"
+                android:layout_above="@id/tv_ket"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.125"
+            android:layout_marginTop="@dimen/padding_default"
+            android:layout_marginRight="@dimen/padding_default"
+            android:layout_marginLeft="@dimen/padding_default"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/padding_default"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.1"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/ic_person"
+                    android:background="@color/color_orange"
+                    android:padding="3dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="match_parent"
+                    android:minHeight="40dp"
+                    android:id="@+id/tv_nama"
+                    android:gravity="center_vertical"
+                    android:background="@color/color_grey_white"
+                    android:paddingRight="@dimen/padding_default"
+                    android:paddingLeft="@dimen/padding_default"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.125"
+            android:layout_marginTop="@dimen/padding_default"
+            android:layout_marginRight="@dimen/padding_default"
+            android:layout_marginLeft="@dimen/padding_default"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/padding_default"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.1"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/ic_city"
+                    android:background="@color/color_orange"
+                    android:padding="3dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="match_parent"
+                    android:minHeight="40dp"
+                    android:id="@+id/tv_address"
+                    android:gravity="center_vertical"
+                    android:background="@color/color_grey_white"
+                    android:paddingRight="@dimen/padding_default"
+                    android:paddingLeft="@dimen/padding_default"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.125"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/padding_default"
+            android:layout_marginRight="@dimen/padding_default"
+            android:layout_marginLeft="@dimen/padding_default"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/padding_default"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.1"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/ic_point"
+                    android:background="@color/color_orange"
+                    android:padding="3dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="match_parent"
+                    android:minHeight="40dp"
+                    android:id="@+id/tv_point"
+                    android:gravity="center_vertical"
+                    android:background="@color/color_grey_white"
+                    android:paddingRight="@dimen/padding_default"
+                    android:paddingLeft="@dimen/padding_default"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.125"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="@dimen/padding_default"
+            android:layout_marginLeft="@dimen/padding_default"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+           <Button
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:background="@drawable/bg_button"
+               android:text="Simpan"
+               android:id="@+id/btn_simpan"
+               android:textColor="@color/color_white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

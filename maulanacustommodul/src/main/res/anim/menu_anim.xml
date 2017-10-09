@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set>
+
+    <scale xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fromXScale="1"
+        android:toXScale="1"
+        android:fromYScale="1"
+        android:toYScale="70"
+        android:pivotX="100%"
+        android:pivotY="100%"
+        android:duration="@integer/menu_animation_duration"
+        />
+
+    <!--<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXDelta="0"
+    android:toXDelta="0"
+    android:fromYDelta="0"
+    android:toYDelta="-200"
+    android:duration="@integer/menu_animation_duration"/>-->
+</set>

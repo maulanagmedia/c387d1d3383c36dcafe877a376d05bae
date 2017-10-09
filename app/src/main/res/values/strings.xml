@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PSP Location Finder</string>
+    <string name="title_activity_form_maps">Map</string>
+</resources>

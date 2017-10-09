@@ -1,0 +1,13 @@
+<resources>
+    <string name="api_error">Terjadi kesalahan saat mengakses data, mohon coba kembali</string>
+    <string name="api_unauthorized">Anda tidak memiliki akses ke halaman ini</string>
+    <string name="app_exit">Tekan kembali untuk keluar</string>
+
+    <string name="download_apk_title">Download Paket</string>
+    <string name="download_apk_message">Mohon tunggu...</string>
+
+    <string name="runtime_permissions_txt">Mohon ijinkan akses layanan</string>
+
+    <integer name="menu_animation_duration">500</integer>
+    <integer name="menu_p_animation_duration">300</integer>
+</resources>

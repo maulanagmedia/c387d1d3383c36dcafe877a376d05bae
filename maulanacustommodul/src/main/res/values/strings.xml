@@ -1,0 +1,13 @@
+<resources>
+    <string name="api_error">Something bad happened, please try later</string>
+    <string name="api_unauthorized">You don\'t have permission to access this app</string>
+    <string name="app_exit">Press again to exit</string>
+
+    <string name="download_apk_title">Download Package</string>
+    <string name="download_apk_message">Downloading, please wait...</string>
+
+    <string name="runtime_permissions_txt">Please enable requested service</string>
+
+    <integer name="menu_animation_duration">500</integer>
+    <integer name="menu_p_animation_duration">300</integer>
+</resources>
