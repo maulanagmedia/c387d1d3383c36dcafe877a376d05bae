@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">PSP Location Finder</string>
+    <string name="app_name">POL</string>
+    <string name="app_title">PSP Outlet Locator</string>
     <string name="title_activity_form_maps">Map</string>
 </resources>

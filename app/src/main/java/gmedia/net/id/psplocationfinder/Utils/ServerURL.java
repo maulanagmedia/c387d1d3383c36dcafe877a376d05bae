@@ -12,4 +12,6 @@ public class ServerURL {
     public static final String login = baseURL + "api/location/login/";
     public static final String getLocation = baseURL + "api/location/get_location/";
     public static final String saveLocation = baseURL + "api/location/save_location/";
+    public static final String saveImages = baseURL + "api/location/insert_foto/";
+    public static final String getImages = baseURL + "api/location/get_images/";
 }

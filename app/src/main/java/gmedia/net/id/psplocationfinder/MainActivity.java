@@ -65,7 +65,6 @@ public class MainActivity extends RuntimePermissionsActivity {
     private SessionManager session;
     private String kodeArea;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,13 +73,17 @@ public class MainActivity extends RuntimePermissionsActivity {
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
         );
 
+        setTitle(getString(R.string.app_title));
+
         if (ContextCompat.checkSelfPermission(
                 MainActivity.this, Manifest.permission.WRITE_SETTINGS) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(
                 MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(
-                MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+                MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(
+                MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(
+                MainActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ) {
 
             MainActivity.super.requestAppPermissions(new
-                            String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_SETTINGS}, R.string
+                            String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_SETTINGS, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, R.string
                             .runtime_permissions_txt
                     , REQUEST_PERMISSIONS);
         }
@@ -334,7 +337,11 @@ public class MainActivity extends RuntimePermissionsActivity {
                     Intent intent = new Intent(MainActivity.this, FormMapsActivity.class);
                     intent.putExtra("kdcus", selectedItem.getItem1());
                     intent.putExtra("nama", selectedItem.getItem2());
+                    intent.putExtra("latitude", selectedItem.getItem6());
+                    intent.putExtra("longitude", selectedItem.getItem7());
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
+                    finish();
                 }
             });
         }
