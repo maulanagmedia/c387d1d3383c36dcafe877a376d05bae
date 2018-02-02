@@ -7,7 +7,8 @@ package gmedia.net.id.psplocationfinder.Utils;
 public class ServerURL {
 
     //private static final String baseURL = "http://192.168.12.181/psp/";
-    private static final String baseURL = "http://api.putmasaripratama.co.id/";
+    //private static final String baseURL = "http://api.putmasaripratama.co.id/";
+    private static final String baseURL = "http://119.2.53.122/mobilesalesforce/";
 
     public static final String login = baseURL + "api/location/login/";
     public static final String getLocation = baseURL + "api/location/get_location/";
